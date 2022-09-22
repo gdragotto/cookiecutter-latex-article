@@ -1,6 +1,7 @@
 {
     "title": "My Article",
     "author": "John Doe",
+    "ORCID": "0000-0002-5447-6245",
     "file_name": "main",
     "directory_name": "my_article"
 }

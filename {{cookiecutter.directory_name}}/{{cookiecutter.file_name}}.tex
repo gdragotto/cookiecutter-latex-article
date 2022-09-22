@@ -1,54 +1,24 @@
 \documentclass[12pt]{article}
 
 % Prevent words to overflow over the margin
-% \sloppy  % Alternative command
 \emergencystretch 3em
+\usepackage[margin=1.2in]{geometry}
 
-% Images and plots
-\usepackage{graphicx}
-\usepackage{pgfplots}
-
-% Math
-\usepackage{amsmath,amssymb,amsthm,enumitem,mathtools}
-\renewcommand{\qedsymbol}{$\blacksquare$}
-\renewcommand\arraystretch{1.2}
-\usepackage{multirow}
-\usepackage{algorithm}% http://ctan.org/pkg/algorithms
-\usepackage[noend]{algpseudocode} % Avoid "end" and make it look cleaner
-
-% Tables
-\usepackage{csvsimple}	% reading CSV files in tables
-\usepackage{booktabs}   % Nicer Tables
-\usepackage{adjustbox}  % To adjust table length
-
-% Hyperreferences
-\usepackage{hyperref}
-
-% Acronyms
-\usepackage[xindy, acronyms]{glossaries}   % Glossaries and Acronyms
-\makeglossaries
-
-% Todos
-\usepackage[textsize=tiny]{todonotes}
-\newcommand{\mynote}[1]{\todo[inline, caption={}]{ {{cookiecutter.author}} : #1}}
-\newcommand{\mynoteside}[1]{\todo[caption={}]{ {{cookiecutter.author}} : #1}}
-\newcommand{\todofigure}[0]{\missingfigure[figwidth=\textwidth, figcolor=white]{} }
+% Headers, packages, definitions
+\input{headers/head.tex}
 
 % Definitions
-\input{definitions.tex}
+\input{headers/definitions.tex}
 
-% Bibliography
-\bibliographystyle{alpha}
-
-
+\newcommand{\orcidauthorA}{ {{cookiecutter.ORCID}} }
 \title{ {{cookiecutter.title}} }
-\author{ {{cookiecutter.author}} }
+\author{ {{cookiecutter.author}} \orcidA{}}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-We present...
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc cursus mi at pretium congue. Suspendisse enim tortor, scelerisque non luctus quis, malesuada eget mauris. Sed quis scelerisque quam, sed facilisis mauris. Vivamus feugiat tempus urna, a tristique sem gravida id. In fringilla luctus risus quis auctor. Nam lorem ex, condimentum id elit eget, ornare luctus sapien. Phasellus fringilla tincidunt diam, ut blandit diam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean condimentum imperdiet elit et aliquam. Vivamus scelerisque, lorem in pretium placerat, mi enim molestie sem, eu varius lorem ex quis turpis.
 \end{abstract}
 
 % Table of contents
@@ -57,37 +27,35 @@ We present...
 
 \section{Introduction}
 
-Let's try one acronym,~\gls{LO}. Let's try one reference~\cite{conforti2014}.
+Several real-world problems often involve a series of selfish agents optimizing their benefits while mutually affecting their decisions. ~\gls{IPG} offer a flexible modeling paradigm for multi-agent decision-making ~\cite{conforti2014}.
 
-\mynote{Here is a todo note.}
+\todo{Here is a todo note regarding \cref{def:IPG}.}
 
 
-\subsection{Related work}
+\subsection{Literature Review}
 
 \section{Our method}
 
-Here is an example of optimization problem
-\begin{equation*}
-	\begin{array}{ll}
-		\text{minimize} & f(x)\\
-		\text{subject to} & g(x)\le 0,
-	\end{array}
-\end{equation*}
-where $x \in \reals^n$ is the optimization variable.
-See {\tt definitions.tex} to get familiar and possibly add new math definitions.
+\begin{definition}
+	An ~\gls{IPG} is a non-cooperative simultaneous game among $n$ players with each player $i=1,2,\dots,n$ solving the optimization problem
+	\begin{mini!}
+		{\xofi}{f^i(\xofi,\xminusi)  \protect\label{eq:IPG:Obj}}
+		{\label{eq:IPG}}{}
+		%
+		\addConstraint{\xofi}{\in \X{i}, \protect\label{eq:IPG:Constraints}}
+	\end{mini!}
+	where, for any player $i$, $\X{i}$ is the set $i$'s strategies, and $f^i$ is its utility function.
+	\label{def:IPG}
+\end{definition}
 
 
-\mynote{Here is another todo note.}
+\todo{Here is another todo note.}
 
-\todofigure
 
 \subsection{Theoretical results}%
 \label{sub:theoretical_results}
 
 
-\begin{definition}
-	This is this.
-\end{definition}
 
 
 \begin{theorem}

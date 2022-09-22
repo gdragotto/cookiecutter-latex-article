@@ -1,0 +1,55 @@
+% Images and plots
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{graphicx, pgfplots, subfigure, standalone, pgf, tikz}
+\usepackage[justification=centering]{caption}
+
+%Biblio
+\usepackage[sort&compress,numbers]{natbib}
+
+% Utilities
+\usepackage{comment, url,float, setspace, xspace}
+\pgfplotsset{compat=1.18} 
+
+% Math
+\usepackage{amsmath, amssymb, amsthm, amsfonts, enumitem, mathtools, array, bm}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\renewcommand\arraystretch{1.2}
+\setlist[enumerate]{label=(\roman*.)}
+
+% Algorithms
+\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
+
+% Definition of Optimization problems
+\usepackage[short,c2,nocomma]{optidef}
+
+% Hyperreferences
+\usepackage[colorlinks,
+            linkcolor=BlueViolet,
+            citecolor=blue,
+            urlcolor=blue]{hyperref}
+
+% References to objects
+\usepackage[nameinlink]{cleveref}
+
+% Tables
+\usepackage{csvsimple, booktabs, longtable, multirow, multicol, adjustbox}	% reading CSV files in tables
+
+% Acronyms
+\usepackage[xindy, acronyms, nowarn]{glossaries}   % Glossaries and Acronyms
+\makeglossaries
+
+% Todos
+\newcommand{\todo}[1]{ {\color{Turquoise} \texttt{\#TODO }#1} }
+
+
+%ORCIDs
+\definecolor{lime}{HTML}{A6CE39}
+\DeclareRobustCommand{\orcidicon}{
+	\begin{tikzpicture} \draw[lime, fill=lime] (0,0) circle [radius=0.16] node[white] { {\fontfamily{qag}\selectfont \tiny ID} };
+	\draw[white, fill=white] (-0.0625,0.095) circle [radius=0.007];
+	\end{tikzpicture} \hspace{-2mm}
+}
+
+\foreach \x in {A, ..., Z}{\expandafter\xdef\csname orcid\x\endcsname{\noexpand\href{https://orcid.org/\csname orcidauthor\x\endcsname}{\noexpand\orcidicon} } }
+% Bibliography
+\bibliographystyle{plainnat}
