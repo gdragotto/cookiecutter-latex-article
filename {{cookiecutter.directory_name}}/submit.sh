@@ -4,7 +4,7 @@ rm -rf submission && mkdir submission
 latexpand --empty-comments {{cookiecutter.file_name}}.tex > {{cookiecutter.file_name}}_arXiv.tex
 # Move into submission folder
 mv {{cookiecutter.file_name}}_arXiv.tex ./submission/{{cookiecutter.file_name}}_arXiv.tex
-cp data ./submission/data
+cp -R data ./submission/data
 cp bibliography.bib ./submission/bibliography.bib
 # Compile and generate bbl
 cd submission
